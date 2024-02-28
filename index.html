@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newspaper Landing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #000000;
+            color:#ff0000;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff0000; /* hover color */
+        }
+
+        .hamburger {
+            display: none; /* Hide the hamburger menu initially */
+        }
+
+        @media only screen and (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+            }
+
+            nav ul li {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+                font-size: 20px;
+                margin-right: 20px;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between; /* Align items in two columns */
+            flex-wrap: wrap; /* Allow items to wrap to the next row if needed */
+        }
+
+        .featured-article, .latest-news {
+            width: 48%; /* Adjust width for two columns */
+            margin-bottom: 20px;
+        }
+
+        .small-photo {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+        }
+
+        footer {
+            background-color: #000000;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%; /* Ensure footer spans the entire width */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CNN</h1>
+        <nav>
+            <div class="hamburger">☰</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="article.html">Article</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="featured-article">
+            <h2>Featured Article</h2>
+            <article>
+                <h3>Amazon's New Headquarters: A Game-Changer for Cities</h3>
+                <p>Amazon's decision to establish a new headquarters in a city could transform its economy and shape its future...</p>
+                <img src="images/seattle.jpg" alt="Amazon HQ" class="small-photo">
+            </article>
+        </section>
+
+        <section class="latest-news">
+            <h2>Latest News</h2>
+            <article>
+                <h3>Why Walmart is buying Vizio</h3>
+                <p>
+                    Walmart doesn’t want to just sell groceries and t-shirts. It wants to be a media and advertising giant like Amazon...</p>
+                <img src="images/walmart.jpg" alt="Amazon HQ" class="small-photo">
+            </article>
+        </section>
+    </main>
+
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function(){
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
+    
+    <footer>
+        <p>Contact Us at people@Cnn.com</p>
+    </footer>
+</body>
+</html>
+
+
+

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .article-header {
+            background-color: #000000;
+            color: #ff0000;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff0000; /* Change to your desired hover color */
+        }
+
+        .hamburger {
+            display: none; /* Hide the hamburger menu initially */
+        }
+
+        @media only screen and (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+            }
+
+            nav ul li {
+                display: block;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+                font-size: 20px;
+                margin-right: 20px;
+                text-align: right;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .article-content section {
+            flex-grow: 1;
+            margin-right: 20px;
+        }
+
+        .sidebar {
+            flex-basis: 300px;
+        }
+
+        .photo img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            background-color: #000000;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .advertisement {
+            background-color: #f0f0f0;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="article-header">
+        <h1>CNN</h1>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="article.html">Article</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <div class="hamburger">☰</div>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="article-content">
+        <section>
+            <h2>Amazon is replacing Walgreens in the Dow Jones Industrial Average</h2>
+            <p>By Samantha Deluya | February 20, 2024</p>
+            <div class="photo"><img src="images/amazon1.jpg" alt="Amazon 1"></div>
+            <p> 
+                Walgreens Boots Alliance is getting the boot from the 30-stock Dow Jones Industrial Average and Amazon is taking its place.
+                
+                S&P Dow Jones Indices, which manages the index, said in a statement Tuesday that the change is intended to reflect “the evolving nature of the American economy” by increasing the Dow’s consumer retail exposure.
+                
+                The change means that investors who bet on the Dow Jones Industrial Average will now have exposure to Amazon’s stock performance.
+                
+                Amazon joins Apple and Microsoft as the third company from the “Magnificent Seven,” a group of high-performing tech stocks, to join the Dow 30. The other four companies in the group — Meta, Nvidia, Tesla, and Alphabet — are not included in the index, though all seven stocks are included in the much larger S&P 500 index.
+                
+                Historically, getting added to or dropped from the Dow hasn’t had a significant impact on companies’ stock performances. But presence in the index, which began in 1896, comes with a certain level of cachet. The exclusive group traditionally tries to mirror the most important companies in the US economy. That is why the index is so heavily dominated by technology stocks today.
+                
+                The change will occur before the US stock market’s opening on Monday, February 26. Amazon’s stock rose more than 1% and Walgreens’ stock fell 3% in after-hours trading on Tuesday.
+                
+                S&P Dow Jones Indices also announced that Uber would replace JetBlue Airways in its Dow Jones Transportation Average, which is a 20-stock index that tracks the performance of US transportation companies. The change was prompted by JetBlue’s low share price, according to the company.
+                
+                Both Walgreens and JetBlue have experienced share price declines in recent years. Walgreens’ stock is down 68% in the past 5 years, while JetBlue’s stock has fallen 59% in the same time period.
+            </p>
+        </section>
+
+        <aside class="sidebar">
+            <section class="advertisement">
+                <h3>Adopt Kittens!</h3>
+                <div class="photo"><img src="images/kitten.jpg" alt="Kitten"></div>
+                <p>Find your perfect companion today!</p>
+            </section>
+        </aside>
+    </main>
+
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function(){
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
+    
+    <footer>
+        <p>Contact Us at Questions@Cnn.com</p>
+    </footer>
+</body>
+</html>
+
+

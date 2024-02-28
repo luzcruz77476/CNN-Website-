@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .site-header {
+            background-color: #000000;
+            color: #ff0000;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff0000; /* hover color */
+        }
+
+        .hamburger {
+            display: none; /* Hide the hamburger menu initially */
+        }
+
+        @media only screen and (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+            }
+
+            nav ul li {
+                display: block;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+                font-size: 20px;
+                margin-right: 20px;
+                text-align: right;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+        }
+
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .photo {
+            margin: 10px;
+        }
+
+        .photo img {
+            max-width: 300px;
+            height: auto;
+        }
+
+        .gallery-controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .gallery-controls button {
+            padding: 10px 20px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .gallery-controls button:hover {
+            background-color: #ff0000; /* Red hover color */
+        }
+    </style>
+</head>
+<body>
+   <header class="site-header">
+    <h1>CNN</h1>
+    <nav>
+        <div class="hamburger">☰</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="article.html">Article</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <main class="photo-gallery">
+        <div class="photo"><img src="images/amazon1.jpg" alt="Amazon 1"></div>
+        <div class="photo"><img src="images/amazon2.jpg" alt="Amazon 2"></div>
+        <div class="photo"><img src="images/amazon3.jpg" alt="Amazon 3"></div>
+        <div class="photo"><img src="images/anderson.jpg" alt="anderson"></div>
+    </main>
+
+    <div class="gallery-controls">
+        <button id="prev">Previous</button>
+        <button id="next">Next</button>
+    </div>
+
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function(){
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
+
+<script>
+    // JavaScript code for the slideshow
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.photo');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            if (i === index) {
+                slide.style.display = 'block';
+            } else {
+                slide.style.display = 'none';
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        showSlide(currentSlide);
+    }
+
+    // Initial display
+    showSlide(currentSlide);
+
+    // manual navigation
+    document.getElementById('prev').addEventListener('click', prevSlide);
+    document.getElementById('next').addEventListener('click', nextSlide);
+</script>
+  
+
+</body>
+</html>
+
+
+
